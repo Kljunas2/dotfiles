@@ -1,1 +1,8 @@
-/home/miha/.config/tridactyl/tridactylrc
+set theme dark
+set hintchars 0123456789
+set hintfiltermode vimperator
+set hintnames short
+set allowautofocus false
+set searchengine duckduckgo
+set searchurls.tineye https://tineye.com/search/?url=%s
+bind ;t composite hint -pipe img src | tabopen -b tineye

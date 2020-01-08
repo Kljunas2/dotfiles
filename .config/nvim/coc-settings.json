@@ -1,1 +1,13 @@
-/home/miha/.config/nvim/coc-settings.json
+{
+	"languageserver": {
+		"golang": {
+			"command": "gopls",
+			"rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+			"filetypes": ["go"]
+		},
+		"latex": {
+			"command": "texlab",
+			"filetypes": ["tex"]
+		}
+	}
+}
