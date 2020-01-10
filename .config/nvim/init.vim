@@ -45,23 +45,25 @@ colorscheme palenight
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 augroup vim
-	" vim folding
-	autocmd FileType vim setlocal foldmethod=marker
+" vim foldig
+autocmd FileType vim setlocal foldmethod=marker
 augroup END
 " }}}
 
-" auto compile latex
 augroup latex
-	autocmd BufWrite *.tex :!pdflatex %
+" auto compile latex
+autocmd BufWrite *.tex :!pdflatex %
 augroup END
 
 let mapleader = "\<space>"
 
+" easily acces registres
+nnoremap - "
+
 " remap : to <cr> to save a keystroke
 nnoremap <cr> :
 
-" ignore arrows and : {{{
-" ignore : and arrow keys
+" ignore arrow keys and : {{{
 nnoremap : <nop>
 inoremap <Left> <nop>
 inoremap <Right> <nop>
@@ -188,22 +190,4 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-" Using CocList
-" Show all diagnostics
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" Show commands
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " }}}
