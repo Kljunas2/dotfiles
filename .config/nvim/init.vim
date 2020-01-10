@@ -40,21 +40,12 @@ set t_Co=256
 colorscheme palenight
 " }}}
 
-" vim settings {{{
-" editing vim config
-nnoremap <leader>ev :split $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-augroup vim
-" vim foldig
-autocmd FileType vim setlocal foldmethod=marker
-augroup END
-" }}}
-
 augroup latex
-" auto compile latex
-autocmd BufWrite *.tex :!pdflatex %
+	" auto compile latex
+	autocmd BufWrite *.tex :!pdflatex %
 augroup END
 
+" general mappings {{{
 let mapleader = "\<space>"
 
 " easily acces registres
@@ -62,6 +53,18 @@ nnoremap - "
 
 " remap : to <cr> to save a keystroke
 nnoremap <cr> :
+"}}}
+
+" vim settings {{{
+" editing vim config
+nnoremap <leader>ev :split $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+augroup vim
+	" vim foldig
+	autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
 
 " ignore arrow keys and : {{{
 nnoremap : <nop>
