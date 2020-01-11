@@ -29,6 +29,15 @@ filetype indent on
 
 set hlsearch
 
+" highlight trailing whitespace {{{
+match DiffDelete /\v\s+$/
+autocmd BufWinEnter * match DiffDelete /\v\s+$/
+autocmd InsertEnter * match DiffDelete /\s\+\%#\@<!$/
+autocmd InsertLeave * match DiffDelete /\v\s+$/
+autocmd BufWinLeave * call clearmatches()
+nnoremap <leader>w <silent>:match DiffDelete /\v\s+$/<cr>
+" }}}
+
 " visual {{{
 syntax on
 set showcmd
@@ -47,13 +56,10 @@ augroup END
 
 " general mappings {{{
 let mapleader = "\<space>"
-
 " easily acces registres
 nnoremap - "
-
 " remap : to <cr> to save a keystroke
 nnoremap <cr> :
-
 " use vim "very magic" regex
 nnoremap / /\v
 "}}}
