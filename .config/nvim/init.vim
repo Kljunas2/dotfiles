@@ -53,6 +53,9 @@ nnoremap - "
 
 " remap : to <cr> to save a keystroke
 nnoremap <cr> :
+
+" use vim "very magic" regex
+nnoremap / /\v
 "}}}
 
 " vim settings {{{
