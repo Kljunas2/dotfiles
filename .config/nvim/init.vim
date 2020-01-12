@@ -47,6 +47,8 @@ set relativenumber
 set cursorline
 set t_Co=256
 colorscheme palenight
+
+autocmd BufRead,BufNewFile * :call matchadd('Special', '\v\\033\[(\d+;?)+m')
 " }}}
 
 augroup latex

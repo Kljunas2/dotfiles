@@ -45,6 +45,11 @@ esac
 
 use_color=true
 
+# git branch info {{{
+parse_git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 # Set colorful PS1 only on colorful terminals.
 # dircolors --print-database uses its own built-in database
 # instead of using /etc/DIR_COLORS.  Try to use the external file
@@ -72,7 +77,7 @@ if ${use_color} ; then
 	if [[ ${EUID} == 0 ]] ; then
 		PS1='[\[\033[01;96m\]\h\[\033[01;94m\] \w\[\033[01;31m\]]\$\[\033[00m\] '
 	else
-		PS1='[\[\033[01;96m\]\u@\[\033[01;96m\]\h\[\033[01;94m\] \w\[\033[01;32m\]]\$\[\033[00m\] '
+		PS1='\[\033[01;32m\][\[\033[01;96m\]\u@\[\033[01;96m\]\h\[\033[01;94m\] \w$(parse_git_branch)\[\033[01;32m\]]\$\[\033[00m\] '
 	fi
 
 	alias ls='ls --color=auto'
@@ -156,3 +161,4 @@ export PATH=$PATH:/usr/local/go/bin:$GOBIN
 
 # pywal color scheme
 cat ~/.cache/wal/sequences
+
