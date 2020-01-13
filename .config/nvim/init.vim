@@ -53,7 +53,12 @@ autocmd BufRead,BufNewFile * :call matchadd('Special', '\v\\033\[(\d+;?)+m')
 
 augroup latex
 	" auto compile latex
-	autocmd BufWrite *.tex :!pdflatex %
+	au BufWrite *.tex :!pdflatex %
+augroup END
+
+augroup folding
+	" fold on syntax
+	au FileType tex,go,java,py setlocal foldmethod=indent
 augroup END
 
 " general mappings {{{
@@ -74,7 +79,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 augroup vim
 	" vim foldig
-	autocmd FileType vim setlocal foldmethod=marker
+	au FileType vim setlocal foldmethod=marker
 augroup END
 " }}}
 
