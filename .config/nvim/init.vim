@@ -48,18 +48,27 @@ set cursorline
 set t_Co=256
 colorscheme palenight
 
-autocmd BufRead,BufNewFile * :call matchadd('Special', '\v\\033\[(\d+;?)+m')
+" Highlight ansi colour escape codes \033[CODEm
+au BufRead,BufNewFile * :call matchadd('Special', '\v\\033\[(\d+;?)+m')
 " }}}
+
+" language specific {{{
+augroup folding
+	" fold on syntax
+	au FileType tex,go,py setlocal foldmethod=indent
+augroup END
 
 augroup latex
 	" auto compile latex
 	au BufWrite *.tex :!pdflatex %
 augroup END
 
-augroup folding
-	" fold on syntax
-	au FileType tex,go,java,py setlocal foldmethod=indent
+augroup java
+	au FileType java setlocal tabstop=4
+	au FileType java setlocal shiftwidth=4
+	au FileType java setlocal foldmethod=indent
 augroup END
+" }}}
 
 " general mappings {{{
 let mapleader = "\<space>"
