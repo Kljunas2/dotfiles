@@ -60,13 +60,14 @@ augroup END
 
 augroup latex
 	" auto compile latex
-	au BufWrite *.tex :!pdflatex %
+	au BufWritePost *.tex :!pdflatex %
 augroup END
 
 augroup java
 	au FileType java setlocal tabstop=4
 	au FileType java setlocal shiftwidth=4
 	au FileType java setlocal foldmethod=indent
+	au BufWritePost *.java :!javac %
 augroup END
 " }}}
 
