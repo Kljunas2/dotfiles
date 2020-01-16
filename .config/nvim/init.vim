@@ -17,7 +17,7 @@ Plug '29decibel/codeschool-vim-theme'
 call plug#end()
 " }}}
 
-echo ">^.^<"
+" echo ">^.^<"
 
 set autoindent
 set encoding=utf-8
