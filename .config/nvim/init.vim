@@ -69,6 +69,11 @@ augroup java
 	au FileType java setlocal foldmethod=indent
 	au BufWritePost *.java :!javac %
 augroup END
+
+augroup python
+	" Highlight ansi colour escape codes \033[CODEm
+	au BufRead,BufNewFile python :call matchadd('Special', '\v(<=".*?){(\d|\w)*}')
+augroup END
 " }}}
 
 " general mappings {{{
