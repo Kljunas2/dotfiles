@@ -117,6 +117,6 @@ export GOPATH=/home/miha/go
 export PATH=$PATH:/usr/local/go/bin:$GOBIN
 
 # pywal color scheme
-cat ~/.cache/wal/sequences
+# cat ~/.cache/wal/sequences
 
 set -o vi

@@ -3,7 +3,7 @@
 export PROMPT_COMMAND=prompt_command
 
 parse_git_branch() {
-	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
 function prompt_command() {
@@ -27,12 +27,16 @@ function prompt_command() {
 	if [[ ${EUID} == 0 ]] ; then
 		PS1+="${BICya}\h${BIBlu} \w${BRed}\$${RCol}"
 	else
-		PS1+="${BGre}[${BICya}\u@\h${BIBlu} \w]"
-		PS1+="$(parse_git_branch)"
-		PS1+="${BGre}\$ "
+		PS1+="${ICya}[${BICya}\u@\h ${BIBlu}\w${ICya}]"
+		PS1+="${BICya}$(parse_git_branch)"
+		PS1+="${ICya}\$"
+		time_pos="$(expr $(tput cols) - 10)"
+		PS1+="${RCol} \0337\r\033[${time_pos}C"
 		if [ ${EXIT} != 0 ] ; then
-			PS1+="${BRed}"
+			PS1+="\033[4D${BIRed}[${EXIT} "
+		else
+			PS1+="${BCya}["
 		fi
-		PS1+="${EXIT}${RCol} "
+		PS1+="\t]\0338"
 	fi
 }
