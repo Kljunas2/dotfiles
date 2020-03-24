@@ -29,7 +29,7 @@ function prompt_command() {
 	else
 		PS1+="${ICya}[${BICya}\u@\h ${BIBlu}\w${ICya}]"
 		PS1+="${BICya}$(parse_git_branch)"
-		PS1+="${ICya}\$"
+		PS1+="${IBlu}\$"
 		time_pos="$(expr $(tput cols) - 10)"
 		PS1+="${RCol} \0337\r\033[${time_pos}C"
 		if [ ${EXIT} != 0 ] ; then
@@ -39,4 +39,13 @@ function prompt_command() {
 		fi
 		PS1+="\t]\0338"
 	fi
+
+	# change title of terminal
+	PS1+="\[\e]2;Terminal: \w\a\]"
+
+
+	PS2=""
+	PS2+="${BICya}"
+	PS2+=$'\xe2\x96\xb8 '
+	PS2+="${RCol}"
 }
