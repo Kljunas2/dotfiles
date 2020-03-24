@@ -1,5 +1,5 @@
 " plugins {{{
-call plug#begin('~/.vim/plugged')
+call plug#begin('$XDG_DATA_HOME/nvim/plugged')
 
 Plug 'fatih/vim-go'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

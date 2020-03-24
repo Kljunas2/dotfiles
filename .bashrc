@@ -82,6 +82,7 @@ unset use_color safe_term match_lhs sh
 alias cp="cp -i"	# confirm before overwriting something
 alias df='df -h'	# human-readable sizes
 alias free='free -m'	# show sizes in MB
+alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings'
 alias np='nano -w PKGBUILD'
 alias more="less"
 alias ll="ls -la"
@@ -107,16 +108,6 @@ shopt -s histappend
 # ex - tool for extracting files
 source dotfiles/.config/bash/ex
 
-# add ~/.bin to $PATH
-export PATH=~/.bin:$PATH
-
-# go environment variables
-export GOBIN=/home/miha/go/bin
-export GOPATH=/home/miha/go
-
-export PATH=$PATH:/usr/local/go/bin:$GOBIN
-
-# pywal color scheme
-# cat ~/.cache/wal/sequences
+source dotfiles/.config/bash/environment
 
 set -o vi
