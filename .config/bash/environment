@@ -1,0 +1,19 @@
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export LESSHISTFILE="-"
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+eval $(dircolors "$XDG_CONFIG_HOME"/dircolors)
+
+export EDITOR=/sbin/nvim
+export TERMINAL=/sbin/urxvt
+
+# add ~/.bin to $PATH
+export PATH=~/.bin:$PATH
+
+# go environment variables
+export GOBIN=/home/miha/go/bin
+export GOPATH=/home/miha/go
+
+export PATH=$PATH:/usr/local/go/bin:$GOBIN
+

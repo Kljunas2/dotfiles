@@ -29,6 +29,8 @@ filetype indent on
 
 set hlsearch
 
+set nowrap
+
 " highlight trailing whitespace {{{
 match DiffDelete /\v\s+$/
 autocmd BufWinEnter * match DiffDelete /\v\s+$/
@@ -85,6 +87,7 @@ nnoremap <cr> :
 " use vim "very magic" regex
 nnoremap č /\v
 nnoremap ć "
+inoremap <space><tab> <tab>
 "}}}
 
 " vim settings {{{
