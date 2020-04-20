@@ -38,6 +38,7 @@ function prompt_command() {
 			PS1+="${BCya}["
 		fi
 		PS1+="\t]\0338"
+		PS1+="${RCol}"
 	fi
 
 	# change title of terminal
