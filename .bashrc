@@ -111,3 +111,6 @@ source dotfiles/.config/bash/ex
 source dotfiles/.config/bash/environment
 
 set -o vi
+
+# Set composition pipeline to prevent screen tearing.
+# nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
