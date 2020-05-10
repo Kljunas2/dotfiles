@@ -74,7 +74,7 @@ if ${use_color} ; then
 	alias grep='grep --colour=auto'
 	alias egrep='egrep --colour=auto'
 	alias fgrep='fgrep --colour=auto'
-	source dotfiles/.config/bash/prompt
+	source ~/dotfiles/.config/bash/prompt
 fi
 
 unset use_color safe_term match_lhs sh
@@ -106,9 +106,9 @@ shopt -s expand_aliases
 shopt -s histappend
 
 # ex - tool for extracting files
-source dotfiles/.config/bash/ex
+source ~/dotfiles/.config/bash/ex
 
-source dotfiles/.config/bash/environment
+source ~/dotfiles/.config/bash/environment
 
 set -o vi
 

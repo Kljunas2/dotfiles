@@ -14,6 +14,8 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'w0ng/vim-hybrid'
 Plug '29decibel/codeschool-vim-theme'
+
+Plug 'neovimhaskell/haskell-vim'
 call plug#end()
 " }}}
 
@@ -24,8 +26,7 @@ set encoding=utf-8
 set visualbell
 
 filetype on
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 set hlsearch
 
@@ -70,6 +71,13 @@ augroup java
 	au FileType java setlocal shiftwidth=4
 	au FileType java setlocal foldmethod=indent
 	au BufWritePost *.java :!javac %
+augroup END
+
+augroup haskell
+	au FileType haskell setlocal expandtab
+	au FileType haskell setlocal tabstop=4
+	au FileType haskell setlocal shiftwidth=4
+	au FileType haskell setlocal foldmethod=indent
 augroup END
 
 augroup python
@@ -228,4 +236,14 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" }}}
+
+" {{{ Haskell
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
 " }}}
