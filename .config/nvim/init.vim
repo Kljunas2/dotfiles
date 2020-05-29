@@ -44,7 +44,12 @@ nnoremap <leader>w <silent>:match DiffDelete /\v\s+$/<cr>
 " visual {{{
 syntax on
 set showcmd
+" statusline {{{
 set statusline=%F
+set statusline+=%=
+set statusline+=%l/%L\:%v
+"}}}
+set colorcolumn=80
 set number
 set relativenumber
 set cursorline

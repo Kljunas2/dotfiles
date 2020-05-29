@@ -39,7 +39,13 @@ function prompt_command() {
 	if [[ ${EUID} == 0 ]] ; then
 		PS1+="${BICya}\h${BIBlu} \w${BRed}\$${RCol}"
 	else
-		PS1+="${ICya}[${BICya}\u@\h ${BIBlu}\w${ICya}]"
+		PS1+="${ICya}[${BICya}\u@\h ${BIBlu}"
+		if [ $(tput cols) -gt 100 ] ; then
+			PS1+="\w"
+		else
+			PS1+="\W"
+		fi
+		PS1+="${ICya}]"
 		PS1+="${BICya}$(parse_git_branch)"
 		PS1+="${IBlu}\$${RCol} "
 	fi
