@@ -33,7 +33,7 @@ bindsym $mod+Return exec terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec rofi -show run -lines 10 -theme .config/rofi/colors-rofi-dark -opacity 0.5
+bindsym $mod+d exec rofi -show drun -lines 10 -theme .config/rofi/colors-rofi-dark -opacity 0.5 -show-icons
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
