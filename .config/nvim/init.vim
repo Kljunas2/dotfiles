@@ -1,6 +1,8 @@
 " plugins {{{
 call plug#begin('$XDG_DATA_HOME/nvim/plugged')
 
+Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
+
 Plug 'fatih/vim-go'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lervag/vimtex'

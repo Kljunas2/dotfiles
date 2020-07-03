@@ -65,9 +65,9 @@ bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
 # Scrot
-bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Slike'
-bindsym $mod+Print --release exec --no-startup-id scrot -u -e 'mv $f ~/Slike'
-bindsym $mod+Shift+Print --release exec --no-startup-id scrot -s -e 'mv $f ~/Slike'
+bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures'
+bindsym $mod+Print --release exec --no-startup-id scrot -u -e 'mv $f ~/Pictures'
+bindsym $mod+Shift+Print --release exec --no-startup-id scrot -s -e 'mv $f ~/Pictures'
 # bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
@@ -276,8 +276,8 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id picom -b
 exec --no-startup-id "unclutter -idle 5 -b"
 exec --no-startup-id "redshift -l 46:13 -t 6500:3000"
+exec --no-startup-id "ibus-daemon -xrd"
 exec --no-startup-id force-composition-pipeline
-#exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id clipit
