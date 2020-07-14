@@ -88,11 +88,6 @@ alias more="less"
 alias ll="ls -la"
 alias vim="nvim"
 
-# i3-swallow
-alias totem="i3-swallow totem"
-alias sxiv="i3-swallow sxiv"
-alias zathura="i3-swallow zathura"
-
 export LESS=-R
 
 xhost +local:root > /dev/null 2>&1
