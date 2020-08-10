@@ -1,0 +1,2 @@
+xwallpaper --center /home/miha/.config/wall.jpg
+source .xinitrc
