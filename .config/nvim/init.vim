@@ -18,10 +18,13 @@ Plug 'w0ng/vim-hybrid'
 Plug '29decibel/codeschool-vim-theme'
 
 Plug 'neovimhaskell/haskell-vim'
+
+Plug 'mattpenney89/vimify'
 call plug#end()
 " }}}
 
 " echo ">^.^<"
+let g:spotify_token='OGMwZDM0YTgwYzhkNDc5MGE0MmZmNzgxZWM2ZDUyMDg6MWZkNGI4NTAzMjE1NDY5MDkzYmYxNTIwMzAwNjhhODI='
 
 set autoindent
 set encoding=utf-8
