@@ -53,13 +53,11 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 # Start Applications
 bindsym $mod+F2 exec firefox
-bindsym $mod+F3 exec thunar
+bindsym $mod+F3 exec "terminal -e ncmpcpp"
 bindsym $mod+F4 exec discord
 bindsym $mod+F5 exec minecraft
 bindsym $mod+F6 exec steam
 bindsym $mod+F7 exec "lutris lutris:rungameid/1"
-# bindsym $mod+F3 exec ranger
-bindsym $mod+Shift+F3 exec gksu thunar
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -277,6 +275,7 @@ exec --no-startup-id picom -b
 exec --no-startup-id "unclutter -idle 5 -b"
 exec --no-startup-id "redshift -l 46:13 -t 6500:3000"
 exec --no-startup-id "ibus-daemon -xrd"
+exec --no-startup-id mpd
 exec --no-startup-id force-composition-pipeline
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
