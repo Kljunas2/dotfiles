@@ -282,8 +282,8 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id clipit
 exec --no-startup-id thunderbird
 exec --no-startup-id caprine
-# exec --no-startup-id discord
-# exec --no-startup-id steam
+exec --no-startup-id discord
+exec --no-startup-id steam
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
@@ -344,7 +344,7 @@ set $color13 #c6dfdc
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	i3bar_command i3bar
-	status_command i3status -c ~/.config/i3status/i3status.conf
+	status_command i3status.sh
 	position top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
