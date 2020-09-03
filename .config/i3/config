@@ -55,9 +55,9 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec "terminal -e ncmpcpp"
 bindsym $mod+F4 exec discord
-bindsym $mod+F5 exec minecraft
+#bindsym $mod+F5 exec minecraft
 bindsym $mod+F6 exec steam
-bindsym $mod+F7 exec "lutris lutris:rungameid/1"
+#bindsym $mod+F7 exec "lutris lutris:rungameid/1"
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"

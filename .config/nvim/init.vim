@@ -22,7 +22,7 @@ call plug#end()
 " }}}
 
 " echo ">^.^<"
-let g:spotify_token='OGMwZDM0YTgwYzhkNDc5MGE0MmZmNzgxZWM2ZDUyMDg6MWZkNGI4NTAzMjE1NDY5MDkzYmYxNTIwMzAwNjhhODI='
+let g:tex_flavor = 'latex'
 
 set autoindent
 set encoding=utf-8
