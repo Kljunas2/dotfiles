@@ -9,7 +9,7 @@ export EDITOR=/sbin/nvim
 export TERMINAL=/sbin/urxvt
 
 # add ~/.bin to $PATH
-export PATH=~/.bin:$PATH
+export PATH=~/.local/bin:$PATH
 
 # go environment variables
 export GOBIN=/home/miha/go/bin

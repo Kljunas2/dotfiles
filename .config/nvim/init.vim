@@ -18,8 +18,6 @@ Plug 'w0ng/vim-hybrid'
 Plug '29decibel/codeschool-vim-theme'
 
 Plug 'neovimhaskell/haskell-vim'
-
-Plug 'mattpenney89/vimify'
 call plug#end()
 " }}}
 
