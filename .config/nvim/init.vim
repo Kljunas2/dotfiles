@@ -96,8 +96,6 @@ augroup END
 
 " general mappings {{{
 let mapleader = "\<space>"
-" easily acces registres
-nnoremap - "
 " remap : to <cr> to save a keystroke
 nnoremap <cr> :
 " use vim "very magic" regex

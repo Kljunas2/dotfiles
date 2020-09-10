@@ -47,7 +47,11 @@ function prompt_command() {
 		fi
 		PS1+="${ICya}]"
 		PS1+="${BICya}$(parse_git_branch)"
+		if [ ${EXIT} != 0 ] ; then
+			PS1+="${BIRed}${EXIT} "
+		fi
 		PS1+="${IBlu}\$${RCol} "
+		#_right
 	fi
 
 	# change title of terminal
