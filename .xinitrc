@@ -30,6 +30,7 @@ if [ -f "$usermodmap" ]; then
 fi
 
 setxkbmap si
+xrandr --output DisplayPort-0 --primary
 
 # start some nice programs
 

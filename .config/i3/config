@@ -40,9 +40,6 @@ bindsym $mod+d exec rofi -show drun -lines 10 -theme .config/rofi/colors-rofi-da
 ################################################################################################
 
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-#exec --no-startup-id pulseaudio
-#exec --no-startup-id pa-applet
-#bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
@@ -54,9 +51,9 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec "terminal -e ncmpcpp"
 bindsym $mod+F4 exec discord
-#bindsym $mod+F5 exec minecraft
+bindsym $mod+F5 exec mctlauncher
 bindsym $mod+F6 exec steam
-#bindsym $mod+F7 exec "lutris lutris:rungameid/1"
+
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -65,7 +62,8 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart du
 bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures'
 bindsym $mod+Print --release exec --no-startup-id scrot -u -e 'mv $f ~/Pictures'
 bindsym $mod+Shift+Print --release exec --no-startup-id scrot -s -e 'mv $f ~/Pictures'
-# bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
+
+# Xkill
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 focus_follows_mouse no
