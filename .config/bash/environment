@@ -2,8 +2,20 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.local/cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export LESSHISTFILE="-"
+
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export HISTFILE="$XDG_DATA_HOME"/bash/history
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export RXVT_SOCKET="$XDG_RUNTIME_DIR"/urxvtd
+#export VIMINIT='if !has('nvim') | source "$XDG_CONFIG_HOME/vim/vimrc" | endif'
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+alias wget=wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
+export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
+
 eval $(dircolors "$XDG_CONFIG_HOME"/dircolors)
+source $XDG_CONFIG_HOME/user-dirs.dirs
 
 export EDITOR=/sbin/nvim
 export TERMINAL=/sbin/urxvt
@@ -17,3 +29,4 @@ export GOPATH=/home/miha/go
 
 export PATH=$PATH:/usr/local/go/bin:$GOBIN
 
+export MAKEFLAGS="-j7"

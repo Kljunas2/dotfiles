@@ -90,8 +90,6 @@ alias vim="nvim"
 
 export LESS=-R
 
-xhost +local:root > /dev/null 2>&1
-
 complete -cf sudo
 
 # Bash won't get SIGWINCH if another process is in the foreground.
@@ -108,7 +106,7 @@ shopt -s histappend
 # ex - tool for extracting files
 source ~/dotfiles/.config/bash/ex
 
-source ~/dotfiles/.config/bash/environment
+source ~/.config/bash/environment
 
 set -o vi
 
