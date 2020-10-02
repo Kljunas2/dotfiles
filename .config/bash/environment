@@ -30,3 +30,5 @@ export GOPATH=/home/miha/go
 export PATH=$PATH:/usr/local/go/bin:$GOBIN
 
 export MAKEFLAGS="-j7"
+
+export ERRFILE=$XDG_RUNTIME_DIR/xsession-errors
