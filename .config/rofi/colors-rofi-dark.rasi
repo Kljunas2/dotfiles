@@ -27,7 +27,7 @@
     border-color: @background;
     spacing: 2;
 
-    font: "Latin Modern Sans 13";
+    font: "Latin Modern Sans 20";
 }
 
 #window {

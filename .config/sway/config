@@ -32,7 +32,8 @@ font xft:LatinModernSans 13
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
+#bindsym $mod+Return exec "RXVT_SOCKET=$XDG_RUNTIME_DIR/terminal"
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -59,7 +60,6 @@ bindsym $mod+F4 exec discord
 bindsym $mod+F5 exec mctlauncher
 bindsym $mod+F6 exec steam
 
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
 # Scrot
 bindsym Print exec --no-startup-id grim $(xdg-user-dir PICTURES)/$(date +'%s_grim.png') -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')
@@ -202,7 +202,6 @@ bindsym $mod+0 exec /home/miha/.local/bin/exitmenu
 # autostart applications
 exec --no-startup-id "unclutter -idle 5 -b"
 exec --no-startup-id gammastep
-exec --no-startup-id dunst
 exec --no-startup-id xrdb -load /home/miha/.config/Xresources
 exec --no-startup-id "ibus-daemon -xrd"
 exec --no-startup-id nm-applet
@@ -240,7 +239,7 @@ set $color9 #34AACB
 set $color10 #55B9CC
 set $color11 #73C5CE
 set $color12 #CED4AE
-set $color13 #c6dfdc
+set $color13 #ff1111
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
@@ -253,12 +252,12 @@ bar {
         statusline $fg
         separator  $color5
 
-#                      border  backgr. text
-        focused_workspace  $color5 $color1 $color13
-        active_workspace   $color8 $color13 $bg
-        inactive_workspace $color3 $color3 $bg
-        binding_mode       $color8 #2C2C2C #F9FAF9
-        urgent_workspace   $bg $color13 $bg
+#                          border	backgr.	text
+        focused_workspace  $color5	$color1	$color5
+        active_workspace   $color8	$color5	$bg
+        inactive_workspace $color3	$color3	$bg
+        binding_mode       $color8	#2C2C2C	#F9FAF9
+        urgent_workspace   $color13	$color3	$bg
     }
 }
 
