@@ -15,6 +15,9 @@ export RXVT_SOCKET="$XDG_RUNTIME_DIR"/urxvtd
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 alias wget=wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
+export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 eval $(dircolors "$XDG_CONFIG_HOME"/dircolors)
 source $XDG_CONFIG_HOME/user-dirs.dirs
