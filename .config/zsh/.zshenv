@@ -4,6 +4,7 @@ export XDG_CACHE_HOME="$HOME/.local/cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export LESSHISTFILE="-"
+export LESS=-R
 
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
@@ -14,7 +15,6 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export RXVT_SOCKET="$XDG_RUNTIME_DIR"/urxvtd
 #export VIMINIT='if !has('nvim') | source "$XDG_CONFIG_HOME/vim/vimrc" | endif'
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
-#alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 
@@ -22,8 +22,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 export MOZ_ENABLE_WAYLAND=1
 
-#eval $(dircolors "$XDG_CONFIG_HOME"/dircolors)
-#source $XDG_CONFIG_HOME/user-dirs.dirs
+source $XDG_CONFIG_HOME/user-dirs.dirs
 
 export EDITOR=/sbin/nvim
 export VISUAL=/sbin/nvim

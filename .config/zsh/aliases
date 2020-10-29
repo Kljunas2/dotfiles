@@ -11,3 +11,4 @@ alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 
+alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
