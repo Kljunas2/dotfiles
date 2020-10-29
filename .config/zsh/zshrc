@@ -1,0 +1,19 @@
+# vi:syntax=zsh
+# zshrc
+
+[[ $- != *i* ]] && return
+
+autoload -Uz compinit; compinit
+
+# Enable colors for ls, etc.
+eval $(dircolors -b $XDG_CONFIG_HOME/dircolors)
+
+source $ZDOTDIR/zprompt
+
+source $ZDOTDIR/aliases
+
+export LESS=-R
+
+
+# ex - tool for extracting files
+source $ZDOTDIR/ex

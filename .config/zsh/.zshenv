@@ -2,6 +2,7 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.local/cache"
 export XDG_DATA_HOME="$HOME/.local/share"
+export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export LESSHISTFILE="-"
 
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
@@ -13,7 +14,7 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export RXVT_SOCKET="$XDG_RUNTIME_DIR"/urxvtd
 #export VIMINIT='if !has('nvim') | source "$XDG_CONFIG_HOME/vim/vimrc" | endif'
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
-alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
+#alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 
@@ -21,10 +22,11 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 export MOZ_ENABLE_WAYLAND=1
 
-eval $(dircolors "$XDG_CONFIG_HOME"/dircolors)
-source $XDG_CONFIG_HOME/user-dirs.dirs
+#eval $(dircolors "$XDG_CONFIG_HOME"/dircolors)
+#source $XDG_CONFIG_HOME/user-dirs.dirs
 
 export EDITOR=/sbin/nvim
+export VISUAL=/sbin/nvim
 export TERMINAL=/sbin/urxvt
 
 # add ~/.bin to $PATH
@@ -39,3 +41,7 @@ export PATH=$PATH:/usr/local/go/bin:$GOBIN
 export MAKEFLAGS="-j7"
 
 export ERRFILE=$XDG_RUNTIME_DIR/xsession-errors
+
+HISTFILE=$XDG_DATA_HOME/zsh/history
+HISTSIZE=1000
+SAVEHIST=1000

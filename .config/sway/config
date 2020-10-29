@@ -1,16 +1,15 @@
 input * {
 	xkb_layout "si"
 }
-output DP-1 pos 0 0 bg ~/.config/wall.jpg center
-output eDP-1 pos 3440 0 bg ~/.config/wall.jpg center
+output DP-1 pos 0 0 bg ~/.config/wall.png center
+output eDP-1 pos 3500 0 bg ~/.config/wall.png center
 focus output DP-1
 exec --no-startup-id xrandr --output $(xrandr | grep "connected 3440x1440" | cut -f 1 -d " ") --primary
 
+seat * hide_cursor 5000
+
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
-
-# set default desktop layout (default is tiling)
-# workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 1
@@ -40,17 +39,9 @@ bindsym $mod+Shift+q kill
 # start program launcher
 bindsym $mod+d exec rofi -show drun -theme /home/miha/.config/rofi/colors-rofi-dark.rasi -opacity 0.5 -show-icons
 
-################################################################################################
-## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
-################################################################################################
-
-bindsym $mod+Ctrl+m exec urxvt -e 'alsamixer'
-
-################################################################################################
-
 # Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+# bindsym XF86MonBrightnessUp exec "brightnessctl s +10%; notify-send 'brightness up'"
+# bindsym XF86MonBrightnessDown exec "brightnessctl s 10%-; notify-send 'brightness down'"
 
 # Start Applications
 bindsym $mod+F2 exec firefox
@@ -60,13 +51,11 @@ bindsym $mod+F5 exec mctlauncher
 bindsym $mod+F6 exec steam
 
 
-# Scrot
-bindsym Print exec --no-startup-id grim $(xdg-user-dir PICTURES)/$(date +'%s_grim.png') -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')
-bindsym $mod+Print exec --no-startup-id grim $(xdg-user-dir PICTURES)/$(date +'%s_grim.png') -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')"
-bindsym $mod+Shift+Print --release exec --no-startup-id grim $(xdg-user-dir PICTURES)/$(date +'%s_grim.png') -g "$(slurp)"
-
-# Xkill
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+# screensht
+bindsym Print exec --no-startup-id grimshot save screen
+bindsym $mod+Print exec --no-startup-id grimshot save win
+bindsym $mod+Shift+Print exec --no-startup-id grimshot save area
+#bindsym $mod+Shift+Print --release exec --no-startup-id grimshot save area
 
 focus_follows_mouse no
 
@@ -76,8 +65,7 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
+# alternatively, you can use the cursor keys: bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
@@ -140,6 +128,7 @@ bindsym $mod+Ctrl+Left workspace prev
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
 set $ws1 1
+workspace $ws1 output DP-1
 set $ws2 2
 workspace $ws2 output eDP-1
 set $ws3 3
@@ -187,20 +176,16 @@ assign [title="Messenger"] $ws2
 assign [title="Discord"] $ws4
 assign [title="Steam"] $ws3
 
-# Open specific applications in floating mode
-for_window [class="GParted"] floating enable border normal
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# restart sway inplace (preserves your layout/session, can be used to upgrade sway)
 bindsym $mod+Shift+r restart
 
 bindsym $mod+0 exec /home/miha/.local/bin/exitmenu
 
 # autostart applications
 exec --no-startup-id "unclutter -idle 5 -b"
-exec --no-startup-id gammastep
 exec --no-startup-id gammastep-indicator
 exec --no-startup-id xrdb -load /home/miha/.config/Xresources
 exec --no-startup-id "ibus-daemon -xrd"
@@ -209,6 +194,7 @@ exec --no-startup-id thunderbird
 exec --no-startup-id discord
 exec --no-startup-id caprine
 exec --no-startup-id steam
+#exec --no-startup-id kanshi
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 
 
@@ -288,3 +274,6 @@ smart_gaps on
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
+
+# Sway integration with systemd.
+exec "systemctl --user import-environment; systemctl --user start sway-session.target"
