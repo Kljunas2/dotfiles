@@ -31,7 +31,7 @@ font xft:LatinModernSans 13
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -45,7 +45,7 @@ bindsym $mod+d exec rofi -show drun -theme /home/miha/.config/rofi/colors-rofi-d
 
 # Start Applications
 bindsym $mod+F2 exec firefox
-bindsym $mod+F3 exec "urxvt -e ncmpcpp"
+bindsym $mod+F3 exec "alacritty -e ncmpcpp"
 bindsym $mod+F4 exec discord
 bindsym $mod+F5 exec mctlauncher
 bindsym $mod+F6 exec steam

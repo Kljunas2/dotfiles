@@ -1,0 +1,37 @@
+font:
+        size: 15
+        offset:
+                x: 0
+        normal:
+                family: Latin Modern Mono Light
+
+schemes:
+        default: &dark
+                primary:
+                        background: '#222d31'
+                        foreground: '#d8d8d8'
+                cursor:
+                        text: '#aa1111'
+                        cursor: '#1abb9b'
+                normal:
+                        black: '#222d31'
+                        red: '#ab4642'
+                        green: '#73807e'
+                        yellow: '#f7ca88'
+                        blue: '#7cafc2'
+                        magenta: '#ba8baf'
+                        cyan: '#1abb9b'
+                        white: '#d8d8d8'
+                bright:
+                        black: '#585858'
+                        red: '#ab4642'
+                        green: '#8d8f8d'
+                        yellow: '#f7ca88'
+                        blue: '#7cafc2'
+                        magenta: '#ba8baf'
+                        cyan: '#1abb9b'
+                        white: '#f8f8f8'
+
+
+
+colors: *dark
