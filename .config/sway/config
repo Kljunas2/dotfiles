@@ -2,7 +2,7 @@ input * {
 	xkb_layout "si"
 }
 output DP-1 pos 0 0 bg ~/.config/wall.png center
-output eDP-1 pos 3500 0 bg ~/.config/wall.png center
+output eDP-1 pos 3440 0 bg ~/.config/wall.png center
 focus output DP-1
 exec --no-startup-id xrandr --output $(xrandr | grep "connected 3440x1440" | cut -f 1 -d " ") --primary
 
@@ -44,6 +44,7 @@ bindsym $mod+d exec rofi -show drun -theme /home/miha/.config/rofi/colors-rofi-d
 # bindsym XF86MonBrightnessDown exec "brightnessctl s 10%-; notify-send 'brightness down'"
 
 # Start Applications
+bindsym $mod+F1 exec "alacritty -e pulsemixer"
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec "alacritty -e ncmpcpp"
 bindsym $mod+F4 exec discord
@@ -192,7 +193,7 @@ exec --no-startup-id "ibus-daemon -xrd"
 exec --no-startup-id nm-applet
 exec --no-startup-id thunderbird
 exec --no-startup-id discord
-exec --no-startup-id caprine
+exec --no-startup-id sleep 4 &&caprine
 exec --no-startup-id steam
 #exec --no-startup-id kanshi
 # exec --no-startup-id xautolock -time 10 -locker blurlock

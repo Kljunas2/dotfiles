@@ -28,9 +28,9 @@ setopt CHECK_JOBS
 
 # vi mode
 setopt VI
-source $ZDOTDIR/cursor_mode
 export KEYTIMEOUT=1
 zmodload zsh/complist
+#source $ZDOTDIR/cursor_mode # ne dela z oh-my-zsh
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
@@ -44,7 +44,8 @@ source $ZDOTDIR/zprompt
 
 source $ZDOTDIR/aliases
 
-# ex - tool for extracting files
-source $ZDOTDIR/ex
-
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# oh my zsh
+plugins=(colored-man-pages docker extract golang sudo)
+source $ZSH/oh-my-zsh.sh

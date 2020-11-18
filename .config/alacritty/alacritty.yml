@@ -1,5 +1,5 @@
 font:
-        size: 15
+        size: 17
         offset:
                 x: 0
         normal:
@@ -16,7 +16,7 @@ schemes:
                 normal:
                         black: '#222d31'
                         red: '#ab4642'
-                        green: '#73807e'
+                        green: '#73f09e'
                         yellow: '#f7ca88'
                         blue: '#7cafc2'
                         magenta: '#ba8baf'
