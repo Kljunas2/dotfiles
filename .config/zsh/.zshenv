@@ -46,6 +46,7 @@ export ERRFILE=$XDG_RUNTIME_DIR/xsession-errors
 HISTFILE=$XDG_DATA_HOME/zsh/history
 HISTSIZE=1000
 SAVEHIST=1000
+
 # oh my zsh
-export ZSH=$XDG_DATA_HOME/oh-my-zsh
-export DISABLE_AUTO_UPDATE="true"
+#export ZSH=$XDG_DATA_HOME/oh-my-zsh
+#export DISABLE_AUTO_UPDATE="true"

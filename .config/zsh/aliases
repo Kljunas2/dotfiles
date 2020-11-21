@@ -3,7 +3,7 @@ alias cp="cp -i"	# confirm before overwriting something
 alias df='df -h'	# human-readable sizes
 alias free='free -m'	# show sizes in MB
 alias more="less"
-alias ll="ls -la"
+alias ll="ls -lA"
 alias vim="nvim"
 
 alias ls='ls --color=auto'
@@ -12,5 +12,3 @@ alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
-
-alias ex=extract

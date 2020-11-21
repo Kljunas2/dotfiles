@@ -6,7 +6,7 @@ font:
                 family: Latin Modern Mono Light
 
 schemes:
-        default: &dark
+        default: &bright
                 primary:
                         background: '#222d31'
                         foreground: '#d8d8d8'
@@ -24,7 +24,7 @@ schemes:
                         white: '#d8d8d8'
                 bright:
                         black: '#585858'
-                        red: '#ab4642'
+                        red: '#e67c73'
                         green: '#8d8f8d'
                         yellow: '#f7ca88'
                         blue: '#7cafc2'
@@ -32,6 +32,4 @@ schemes:
                         cyan: '#1abb9b'
                         white: '#f8f8f8'
 
-
-
-colors: *dark
+colors: *bright

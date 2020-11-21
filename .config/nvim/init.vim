@@ -21,7 +21,7 @@ Plug 'neovimhaskell/haskell-vim'
 call plug#end()
 " }}}
 
-" echo ">^.^<"
+echo ">^.^<"
 let g:tex_flavor = 'latex'
 
 set autoindent

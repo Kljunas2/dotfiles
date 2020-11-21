@@ -30,7 +30,7 @@ setopt CHECK_JOBS
 setopt VI
 export KEYTIMEOUT=1
 zmodload zsh/complist
-#source $ZDOTDIR/cursor_mode # ne dela z oh-my-zsh
+source $ZDOTDIR/cursor_mode
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
@@ -44,8 +44,12 @@ source $ZDOTDIR/zprompt
 
 source $ZDOTDIR/aliases
 
+source $ZDOTDIR/ex
+
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # oh my zsh
-plugins=(colored-man-pages docker extract golang sudo)
-source $ZSH/oh-my-zsh.sh
+#plugins=(colored-man-pages docker extract golang)
+#source $ZSH/oh-my-zsh.sh
+
