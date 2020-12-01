@@ -27,7 +27,7 @@ source $XDG_CONFIG_HOME/user-dirs.dirs
 
 export EDITOR=/sbin/nvim
 export VISUAL=/sbin/nvim
-export TERMINAL=/sbin/urxvt
+export TERMINAL=/sbin/alacritty
 
 # add ~/.bin to $PATH
 export PATH=~/.local/bin:$PATH

@@ -1,10 +1,13 @@
 input * {
 	xkb_layout "si"
 }
-output DP-1 pos 0 0 bg ~/.config/wall.png center
-output eDP-1 pos 3440 0 bg ~/.config/wall.png center
+output DP-1 pos 0 0
+output * bg ~/.config/wall.png center
+output eDP-1 pos 3440 0
 focus output DP-1
 exec --no-startup-id xrandr --output $(xrandr | grep "connected 3440x1440" | cut -f 1 -d " ") --primary
+#swaybg_command oguri-swaybg
+#exec --no-startup-id oguri
 
 seat * hide_cursor 5000
 
@@ -22,6 +25,7 @@ hide_edge_borders none
 bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -172,8 +176,11 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
-assign [class="Thunderbird"] $ws2
+assign [app_id="thunderbird"] $ws2
 assign [title="Messenger"] $ws2
+assign [class="discord"] $ws4
+assign [app_id="discord"] $ws4
+assign [instance="discord"] $ws4
 assign [title="Discord"] $ws4
 assign [title="Steam"] $ws3
 
@@ -186,7 +193,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+0 exec /home/miha/.local/bin/exitmenu
 
 # autostart applications
-exec --no-startup-id "unclutter -idle 5 -b"
+#exec --no-startup-id "unclutter -idle 5 -b"
 exec --no-startup-id gammastep-indicator
 exec --no-startup-id xrdb -load /home/miha/.config/Xresources
 exec --no-startup-id "ibus-daemon -xrd"
@@ -194,9 +201,32 @@ exec --no-startup-id nm-applet
 exec --no-startup-id thunderbird
 exec --no-startup-id discord
 exec --no-startup-id sleep 4 &&caprine
-exec --no-startup-id steam
-#exec --no-startup-id kanshi
-# exec --no-startup-id xautolock -time 10 -locker blurlock
+#exec --no-startup-id steam
+exec --no-startup-id kanshi
+
+# swayidle
+exec --no-startup-id swayidle -w \
+	timeout 900 'swaylock --grace 30'
+	#timeout 1200 'swaymsg "output * dpms off"' \
+		#resume 'swaymsg "output * dpms on"'
+
+for_window [app_id="zoom"] inhibit_idle
+for_window [class="vlc"] inhibit_idle fullscreen
+
+# display brightness
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set +5%
+
+# general sound media geys
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# mpc media keys
+bindsym --locked XF86AudioPlay exec mpc toggle
+bindsym --locked XF86AudioNext exec mpc next
+bindsym --locked XF86AudioPrev exec mpc prev
 
 
 # Color palette used for the terminal ( ~/.Xresources file )
@@ -230,8 +260,7 @@ set $color13 #ff1111
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	#bar_command i3bar
-	status_command i3status
+	status_command i3status.sh
 	position top
 
     colors {
@@ -252,12 +281,12 @@ bar {
 bindsym $mod+m bar mode toggle
 
 # Theme colors
-# class				border	backgr.	text    indicator   child_border
-  client.focused		$color1	$bg	$fg	#1Aff9c
-  client.focused_inactive	$color2	#2F3D44	#1ABC9C	#454948
-  client.unfocused		#2F3D44	#2F3D44	#1ABC9C	#454948
-  client.urgent			#CB4B16	#FDF6E3	#1ABC9C	#268BD2
-  client.placeholder		#000000	#0c0c0c	#ffffff	#000000
+# class				border	backgr.	text    indicator	child_border
+  client.focused		$color1	$bg	$fg	#1Aff9c		$color1
+  client.focused_inactive	$color2	#2F3D44	#1ABC9C	#454948		$color2
+  client.unfocused		#2F3D44	#2F3D44	#1ABC9C	#454948		#2F3D44
+  client.urgent			#CB4B16	#FDF6E3	#1ABC9C	#268BD2		#CB4B16
+  client.placeholder		#000000	#0c0c0c	#ffffff	#000000		#000000
 
   client.background		#2B2C2B
 
@@ -278,3 +307,4 @@ smart_borders on
 
 # Sway integration with systemd.
 exec "systemctl --user import-environment; systemctl --user start sway-session.target"
+

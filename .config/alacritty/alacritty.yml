@@ -16,20 +16,20 @@ schemes:
                 normal:
                         black: '#222d31'
                         red: '#ab4642'
-                        green: '#73f09e'
-                        yellow: '#f7ca88'
-                        blue: '#7cafc2'
+                        green: '#33c03e'
+                        yellow: '#fce205'
+                        blue: '#3c7ff2'
                         magenta: '#ba8baf'
                         cyan: '#1abb9b'
                         white: '#d8d8d8'
                 bright:
                         black: '#585858'
                         red: '#e67c73'
-                        green: '#8d8f8d'
-                        yellow: '#f7ca88'
-                        blue: '#7cafc2'
-                        magenta: '#ba8baf'
-                        cyan: '#1abb9b'
+                        green: '#73f09e'
+                        yellow: '#f7faa8'
+                        blue: '#7caff2'
+                        magenta: '#faabcf'
+                        cyan: '#70d3d3'
                         white: '#f8f8f8'
 
 colors: *bright
