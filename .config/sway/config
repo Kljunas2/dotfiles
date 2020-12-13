@@ -1,6 +1,10 @@
 input * {
 	xkb_layout "si"
 }
+
+input 1386:210:Wacom_Bamboo_Craft_Pen {
+	map_to_output eDP-1
+}
 output DP-1 pos 0 0
 output * bg ~/.config/wall.png center
 output eDP-1 pos 3440 0
@@ -283,7 +287,7 @@ bindsym $mod+m bar mode toggle
 # Theme colors
 # class				border	backgr.	text    indicator	child_border
   client.focused		$color1	$bg	$fg	#1Aff9c		$color1
-  client.focused_inactive	$color2	#2F3D44	#1ABC9C	#454948		$color2
+  client.focused_inactive	$color2	#2F3D44	#1ABC9C	#454948		#75899C
   client.unfocused		#2F3D44	#2F3D44	#1ABC9C	#454948		#2F3D44
   client.urgent			#CB4B16	#FDF6E3	#1ABC9C	#268BD2		#CB4B16
   client.placeholder		#000000	#0c0c0c	#ffffff	#000000		#000000

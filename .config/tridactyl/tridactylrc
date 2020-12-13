@@ -8,4 +8,6 @@ set searchurls.tineye https://tineye.com/search/?url=%s
 set searchurls.fran https://fran.si/iskanje?View=1&Query=%s
 set searchurls.fr https://en.pons.com/translate/french-slovenian/%s
 set searchurls.en https://en.pons.com/translate/english-slovenian/%s
+set searchurls.yt https://youtube.com/results?search_query=%s
+set searchurls.hoogle https://hoogle.haskell.org/?hoogle=%s
 bind ;t composite hint -pipe img src | tabopen -b tineye

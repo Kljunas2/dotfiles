@@ -53,3 +53,5 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 #plugins=(colored-man-pages docker extract golang)
 #source $ZSH/oh-my-zsh.sh
 
+# rehash after pacman hook
+TRAPUSR1() { rehash }
