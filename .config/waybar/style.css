@@ -1,0 +1,84 @@
+@define-color background	#091e25;
+@define-color foreground	#72c4b7;
+@define-color focused		#64aaff;
+@define-color visible		#c6dfdc;
+@define-color urgent		#299dc4;
+@define-color black		#222d31;
+@define-color red		#ab4642;
+@define-color green		#33c03e;
+@define-color yellow		#fce205;
+@define-color blue		#3c7ff2;
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: Input, "Fira Code";
+  font-size: 20px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: @background;
+  color: @foreground;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  background: transparent;
+  color: @foreground;
+  border-bottom: 4px solid transparent;
+}
+
+#workspaces button.visible {
+  border-bottom: 4px solid @visible;
+}
+
+#workspaces button.focused {
+  border-bottom: 4px solid @focused;
+  color: @focused;
+}
+
+#workspaces button.urgent {
+  border-bottom: 4px solid @urgent;
+}
+
+#mode {
+  background-color: @black;
+  border-top: 4px solid @black;
+  border-bottom: 4px solid @red;
+}
+
+#battery.warning,
+#memory.warning,
+#cpu.warning {
+  border-bottom: 4px solid @yellow;
+}
+
+#battery.critical,
+#memory.critical,
+#cpu.critical {
+  border-bottom: 4px solid @red;
+}
+
+#battery.charging {
+  border-bottom: 4px solid @green;
+}
+
+#mode,
+#custom-pacman,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#backlight,
+#battery,
+#mpd,
+#temperature,
+#clock {
+  margin: 0 6px;
+  margin-top: 3px;
+  border-bottom: 4px solid transparent;
+}
+

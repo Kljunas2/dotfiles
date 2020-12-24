@@ -45,7 +45,9 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec rofi -show drun -theme /home/miha/.config/rofi/colors-rofi-dark.rasi -opacity 0.5 -show-icons
+bindsym $mod+d exec rofi -show drun
+# connect ssh
+bindsym $mod+c exec rofi -show ssh
 
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec "brightnessctl s +10%; notify-send 'brightness up'"
@@ -61,10 +63,9 @@ bindsym $mod+F6 exec steam
 
 
 # screensht
-bindsym Print exec --no-startup-id grimshot save screen
-bindsym $mod+Print exec --no-startup-id grimshot save win
-bindsym $mod+Shift+Print exec --no-startup-id grimshot save area
-#bindsym $mod+Shift+Print --release exec --no-startup-id grimshot save area
+bindsym Print exec --no-startup-id grimshot --notify save screen
+bindsym $mod+Print exec --no-startup-id grimshot --notify save win
+bindsym $mod+Shift+Print exec --no-startup-id grimshot --notify save area
 
 focus_follows_mouse no
 
@@ -204,8 +205,8 @@ exec --no-startup-id "ibus-daemon -xrd"
 exec --no-startup-id nm-applet
 exec --no-startup-id thunderbird
 exec --no-startup-id discord
-exec --no-startup-id sleep 4 &&caprine
-#exec --no-startup-id steam
+#exec --no-startup-id sleep 4 &&caprine
+exec --no-startup-id steam
 exec --no-startup-id kanshi
 
 # swayidle
@@ -216,6 +217,11 @@ exec --no-startup-id swayidle -w \
 
 for_window [app_id="zoom"] inhibit_idle
 for_window [class="vlc"] inhibit_idle fullscreen
+
+# notetaker
+for_window [title="notetaker_window" ] floating enable
+bindsym $mod+x exec alacritty -e notetaker -t notetaker_window
+bindsym $mod+Shift+x exec mostRecentNote
 
 # display brightness
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
@@ -229,8 +235,8 @@ bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ to
 
 # mpc media keys
 bindsym --locked XF86AudioPlay exec mpc toggle
-bindsym --locked XF86AudioNext exec mpc next
-bindsym --locked XF86AudioPrev exec mpc prev
+bindsym --locked XF86AudioNext exec mpc next; mpc current
+bindsym --locked XF86AudioPrev exec mpc prev; mpc current
 
 
 # Color palette used for the terminal ( ~/.Xresources file )
@@ -261,28 +267,6 @@ set $color10 #55B9CC
 set $color11 #73C5CE
 set $color12 #CED4AE
 set $color13 #ff1111
-
-# Start i3bar to display a workspace bar (plus the system information i3status if available)
-bar {
-	status_command i3status.sh
-	position top
-
-    colors {
-        background $bg
-        statusline $fg
-        separator  $color5
-
-#                          border	backgr.	text
-        focused_workspace  $color5	$color1	$color5
-        active_workspace   $color8	$color5	$bg
-        inactive_workspace $color3	$color3	$bg
-        binding_mode       $color8	#2C2C2C	#F9FAF9
-        urgent_workspace   $color13	$color3	$bg
-    }
-}
-
-# hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class				border	backgr.	text    indicator	child_border

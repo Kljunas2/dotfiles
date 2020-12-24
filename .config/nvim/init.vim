@@ -128,6 +128,12 @@ nnoremap <Up> <nop>
 nnoremap <Down> <nop>
 " }}}
 
+" notetaker {{{
+augroup notes
+	au BufWritePost *note-*.man :silent !buildNote %:p
+augroup END
+"}}}
+
 " important to make govim work
 let g:go_def_mapping_enabled = 0
 

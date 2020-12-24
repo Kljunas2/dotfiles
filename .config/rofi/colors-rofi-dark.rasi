@@ -1,3 +1,12 @@
+configuration {
+	/*opacity: 0.5;*/
+	show-icons: true;
+	icon-theme: "Numix-Square";
+	modi: "run,drun,ssh";
+	lines: 15;
+	font: "Latin Modern Sans 20";
+	case-sensitive: true;
+}
 * {
     active-background: #299DC4;
     active-foreground: @foreground;
@@ -27,7 +36,7 @@
     border-color: @background;
     spacing: 2;
 
-    font: "Latin Modern Sans 20";
+    /*font: "Latin Modern Sans 40";*/
 }
 
 #window {

@@ -1,0 +1,10 @@
+#!/bin/sh
+#vi:syntax=sh
+
+while read file
+do
+	case "$1" in
+	"d")
+		trash "$file" ;;
+	esac
+done

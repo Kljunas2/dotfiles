@@ -1,0 +1,129 @@
+{
+	"layer": "top",
+	"position": "top",
+	"modules-left": [
+		"sway/workspaces",
+		"sway/mode",
+	"sway/window"
+	],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
+		"mpd",
+		"temperature",
+		"custom/pacman",
+		"network",
+		"cpu",
+		"memory",
+		"disk",
+		"battery",
+		"pulseaudio",
+		"idle_inhibitor",
+		"tray"
+	],
+	"tray": {
+		"icon-size": 25
+	},
+	"disk": {
+		"format": "[{free}]"
+	},
+	"idle_inhibitor": {
+		"format": "[{icon}]",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		}
+	},
+	"sway/workspaces": {
+		"disable-scroll-wraparound": true,
+	"enable-bar-scroll": true,
+	"format": "{icon}",
+	"format-icons": {
+		"3": "⚙️",
+		"2": "✉",
+		"4": "☎"
+	}
+	},
+	"sway/window": {
+		"format": "[{}]"
+	},
+	"mpd": {
+	"format": "[{icon} {title}{randomIcon}{repeatIcon}]",
+	"on-scroll-up": "mpc next",
+	"on-scroll-down": "mpc prev",
+	"state-icons": {
+		"playing": "▶",
+		"pause": "▌▌"
+	},
+	"random-icons": {
+		"on": "☘",
+		"off": ""
+	},
+	"repeat-icons": {
+		"on": "♻",
+		"off": ""
+	},
+	"on-click": "mpc toggle"
+	},
+	"custom/pacman": {
+		"format": "[{}]",
+	"interval": 1800,
+	"exec": "wc -l < /tmp/updates",
+	"exec-if": "checkupdates > /tmp/updates"
+	},
+	"cpu": {
+		"format": "[ {usage:3}%]",
+		"interval": 1,
+		"states": {
+			"warning": 70,
+			"critical": 90
+		}
+	},
+	"memory": {
+		"format": "[{used:0.1f}G/{total:0.1f}G]",
+		"interval": 1,
+		"states": {
+			"warning": 70,
+			"critical": 90
+		}
+	},
+	"battery": {
+		"bat": "BAT0",
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "[{icon} {capacity:3}%]",
+		"format-charging": "[ {capacity}%]",
+		"format-alt": "[{time} {icon}]",
+		"format-icons": ["", "", "", "", ""]
+	},
+	"network": {
+		"interval": 1,
+		"interface": "enp5s0f3u1u2",
+		"format-wifi": "[ {essid}]",
+		"format-ethernet": "[ {ipaddr}]",
+		"format-linked": "[ {ipaddr}]",
+		"format-disconnected": "disconnected",
+		"tooltip-format": "{ipaddr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
+	},
+	"clock": {
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format": "{:%A, %d. %m. %H.%M:%S}",
+	"interval": 1
+	},
+	"pulseaudio": {
+		"format": "[{icon} {volume:3}% | {format_source}]",
+		"format-muted": "[ | {format_source}]",
+		"format-source": " {volume:3}%",
+		"format-source-muted": "",
+		"format-icons": {
+			"default": ["", "", ""]
+		},
+		"on-click": "alacritty -e pulsemixer"
+	},
+	"temperature": {
+		"format": "[{temperatureC}°C]"
+	}
+}

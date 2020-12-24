@@ -3,7 +3,7 @@ font:
         offset:
                 x: 0
         normal:
-                family: Latin Modern Mono Light
+                family: Fira Code Retina
 
 schemes:
         default: &bright
