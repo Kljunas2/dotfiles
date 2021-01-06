@@ -7,7 +7,7 @@ parse_git_branch() {
 }
 add-zsh-hook precmd parse_git_branch
 
-PROMPT="%F{cyan}[%B%n@%m %F{blue}%4~%b%F{cyan}]" # "[user@hostname ~]"
+PROMPT="%F{cyan}[%n@%m %F{blue}%4~%b%F{cyan}]" # "[user@hostname ~]"
 PROMPT+="%(?..%B%F{red}%? )"
 PROMPT+="%b%F{blue}%(!.#.$) %f" # " $ "
 

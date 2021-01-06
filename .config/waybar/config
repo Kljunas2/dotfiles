@@ -1,5 +1,4 @@
 {
-	"layer": "top",
 	"position": "top",
 	"modules-left": [
 		"sway/workspaces",
@@ -12,6 +11,7 @@
 	"modules-right": [
 		"mpd",
 		"temperature",
+		"custom/fan",
 		"custom/pacman",
 		"network",
 		"cpu",
@@ -67,8 +67,9 @@
 	"on-click": "mpc toggle"
 	},
 	"custom/pacman": {
-		"format": "[{}]",
-	"interval": 1800,
+		"format": "[{} packages]",
+	"interval": 300,
+	"signal": 1,
 	"exec": "wc -l < /tmp/updates",
 	"exec-if": "checkupdates > /tmp/updates"
 	},
@@ -110,12 +111,12 @@
 	},
 	"clock": {
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-		"format": "{:%A, %d. %m. %H.%M:%S}",
-	"interval": 1
+		"format": "{:%A, %d. %m. [%H:%M:%S]}",
+		"interval": 1
 	},
 	"pulseaudio": {
 		"format": "[{icon} {volume:3}% | {format_source}]",
-		"format-muted": "[ | {format_source}]",
+		"format-muted": "[| {format_source}]",
 		"format-source": " {volume:3}%",
 		"format-source-muted": "",
 		"format-icons": {
@@ -124,6 +125,13 @@
 		"on-click": "alacritty -e pulsemixer"
 	},
 	"temperature": {
-		"format": "[{temperatureC}°C]"
+		"format": "[{temperatureC}°C]",
+		"interval": 1,
+		"hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input"
+	},
+	"custom/fan": {
+		"format": "[{} rpm]",
+		"interval": 1,
+		"exec": "grep speed /proc/acpi/ibm/fan | cut -f 3"
 	}
 }

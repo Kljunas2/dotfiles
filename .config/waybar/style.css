@@ -29,6 +29,7 @@ window#waybar {
   background: transparent;
   color: @foreground;
   border-bottom: 4px solid transparent;
+  border-radius: 5px;
 }
 
 #workspaces button.visible {
@@ -54,16 +55,19 @@ window#waybar {
 #memory.warning,
 #cpu.warning {
   border-bottom: 4px solid @yellow;
+  border-radius: 5px;
 }
 
 #battery.critical,
 #memory.critical,
 #cpu.critical {
   border-bottom: 4px solid @red;
+  border-radius: 5px;
 }
 
 #battery.charging {
   border-bottom: 4px solid @green;
+  border-radius: 5px;
 }
 
 #mode,
@@ -80,5 +84,6 @@ window#waybar {
   margin: 0 6px;
   margin-top: 3px;
   border-bottom: 4px solid transparent;
+  border-radius: 5px;
 }
 
