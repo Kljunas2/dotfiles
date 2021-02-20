@@ -11,3 +11,4 @@ set searchurls.en https://en.pons.com/translate/english-slovenian/%s
 set searchurls.yt https://youtube.com/results?search_query=%s
 set searchurls.hoogle https://hoogle.haskell.org/?hoogle=%s
 bind ;t composite hint -pipe img src | tabopen -b tineye
+bind yd composite current_url | ! youtube-dl

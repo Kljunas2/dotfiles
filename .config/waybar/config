@@ -49,22 +49,24 @@
 		"format": "[{}]"
 	},
 	"mpd": {
-	"format": "[{icon} {title}{randomIcon}{repeatIcon}]",
-	"on-scroll-up": "mpc next",
-	"on-scroll-down": "mpc prev",
-	"state-icons": {
-		"playing": "▶",
-		"pause": "▌▌"
-	},
-	"random-icons": {
-		"on": "☘",
-		"off": ""
-	},
-	"repeat-icons": {
-		"on": "♻",
-		"off": ""
-	},
-	"on-click": "mpc toggle"
+		"format": "[{stateIcon}{title}|{elapsedTime}/{totalTime}{randomIcon}{repeatIcon}]",
+		"format-stopped": "",
+		"format-disconnected": "",
+		"on-scroll-up": "mpc next",
+		"on-scroll-down": "mpc prev",
+		"state-icons": {
+			"playing": " ",
+			"paused": " "
+		},
+		"random-icons": {
+			"on": "|",
+			"off": ""
+		},
+		"repeat-icons": {
+			"on": "|",
+			"off": ""
+		},
+		"on-click": "mpc toggle"
 	},
 	"custom/pacman": {
 		"format": "[{} packages]",

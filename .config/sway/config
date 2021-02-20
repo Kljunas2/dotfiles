@@ -214,14 +214,14 @@ bindsym $mod+0 exec /home/miha/.local/bin/exitmenu
 # autostart applications
 exec --no-startup-id "unclutter -idle 5 -b"
 #exec --no-startup-id sleep 3; gammastep
-exec "sleep 3; gammastep-indicator"
+exec "sleep 2; gammastep-indicator"
 exec --no-startup-id xrdb -load /home/miha/.config/Xresources
 exec --no-startup-id "ibus-daemon -xrd"
 exec --no-startup-id nm-applet
 exec --no-startup-id geary
 exec --no-startup-id discord
-#exec --no-startup-id sleep 4 &&caprine
-exec --no-startup-id steam
+exec --no-startup-id sleep 4 &&caprine
+#exec --no-startup-id steam
 exec --no-startup-id kanshi
 
 # swayidle

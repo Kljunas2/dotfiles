@@ -1,7 +1,7 @@
 set scroll-step 80
 set selection-clipboard clipboard
 
-set recolor-reverse-video
+set recolor-reverse-video = false
 set recolor-keephue
 set recolor
 set recolor-darkcolor "#dddddd"
