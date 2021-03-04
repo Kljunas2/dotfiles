@@ -1,13 +1,15 @@
 @define-color background	#091e25;
 @define-color foreground	#72c4b7;
-@define-color focused		#64aaff;
+@define-color focused		#299dc4;
 @define-color visible		#c6dfdc;
-@define-color urgent		#299dc4;
+@define-color urgent		#cb4b16;
 @define-color black		#222d31;
 @define-color red		#ab4642;
-@define-color green		#33c03e;
+/*@define-color green		#33c03e;*/
+@define-color green		#ff0000;
 @define-color yellow		#fce205;
-@define-color blue		#3c7ff2;
+/*@define-color blue		#3c7ff2;*/
+@define-color blue		#299dc4;
 
 * {
   border: none;
@@ -29,7 +31,7 @@ window#waybar {
   background: transparent;
   color: @foreground;
   border-bottom: 4px solid transparent;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
 }
 
 #workspaces button.visible {
@@ -55,19 +57,19 @@ window#waybar {
 #memory.warning,
 #cpu.warning {
   border-bottom: 4px solid @yellow;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
 }
 
 #battery.critical,
 #memory.critical,
 #cpu.critical {
   border-bottom: 4px solid @red;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
 }
 
 #battery.charging {
   border-bottom: 4px solid @green;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
 }
 
 #mode,
@@ -84,6 +86,6 @@ window#waybar {
   margin: 0 6px;
   margin-top: 3px;
   border-bottom: 4px solid transparent;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
 }
 

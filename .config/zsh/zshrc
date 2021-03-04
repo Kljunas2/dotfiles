@@ -48,6 +48,7 @@ source $ZDOTDIR/ex
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-background-notify/bgnotify.plugin.zsh
 
 # oh my zsh
 #plugins=(colored-man-pages docker extract golang)

@@ -29,6 +29,8 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 export MOZ_ENABLE_WAYLAND=1
 
+export MANPAGER="nvim -c 'set ft=man' -"
+
 source $XDG_CONFIG_HOME/user-dirs.dirs
 
 export EDITOR=/sbin/nvim
@@ -42,8 +44,6 @@ export PATH=~/.local/bin:$PATH
 export GOBIN=/home/miha/go/bin
 export GOPATH=/home/miha/go
 
-export PATH=$PATH:/usr/local/go/bin:$GOBIN
-
 export MAKEFLAGS="-j7"
 
 export ERRFILE=$XDG_RUNTIME_DIR/xsession-errors
@@ -52,7 +52,3 @@ export ERRFILE=$XDG_RUNTIME_DIR/xsession-errors
 HISTFILE=$XDG_DATA_HOME/zsh/history
 HISTSIZE=1000
 SAVEHIST=1000
-
-# oh my zsh
-#export ZSH=$XDG_DATA_HOME/oh-my-zsh
-#export DISABLE_AUTO_UPDATE="true"
