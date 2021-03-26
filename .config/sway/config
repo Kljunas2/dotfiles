@@ -223,6 +223,7 @@ exec --no-startup-id discord
 exec --no-startup-id "sleep 1; caprine"
 #exec --no-startup-id steam
 exec --no-startup-id kanshi
+exec --no-startup-id fnott
 
 # swayidle
 exec --no-startup-id swayidle -w \
@@ -252,6 +253,9 @@ bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ to
 bindsym --locked XF86AudioPlay exec mpc toggle
 bindsym --locked XF86AudioNext exec mpc next; mpc current
 bindsym --locked XF86AudioPrev exec mpc prev; mpc current
+
+# fnott notification bindings
+bindsym $mod+Backspace exec fnottctl dismiss
 
 
 # Color palette used for the terminal ( ~/.Xresources file )

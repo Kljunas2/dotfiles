@@ -1,0 +1,15 @@
+# vi:syntax=python
+
+import atexit
+import os
+import readline
+
+histfile = os.path.join(os.environ['XDG_DATA_HOME'], 'python_history')
+
+try:
+	readline.read_history_file(histfile)
+except IOError:
+	pass
+
+atexit.register(readline.write_history_file, histfile)
+print(f"changed history file path to {histfile}")
