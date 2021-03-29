@@ -52,3 +52,7 @@ source /usr/share/zsh/plugins/zsh-background-notify/bgnotify.plugin.zsh
 
 # rehash after pacman hook
 TRAPUSR1() { rehash }
+
+# autostart gnome-keyring
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK

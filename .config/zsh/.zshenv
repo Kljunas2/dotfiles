@@ -54,3 +54,5 @@ export ERRFILE=$XDG_RUNTIME_DIR/xsession-errors
 HISTFILE=$XDG_DATA_HOME/zsh/history
 HISTSIZE=1000
 SAVEHIST=1000
+
+export VDPAU_DRIVER=radeonsi

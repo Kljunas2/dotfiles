@@ -4,7 +4,7 @@ configuration {
 	icon-theme: "Numix-Square";
 	modi: "run,drun,ssh";
 	lines: 15;
-	font: "Latin Modern Sans 20";
+	font: "Latin Modern Sans 25";
 	case-sensitive: true;
 }
 * {
@@ -87,6 +87,7 @@ configuration {
 
 #element {
     border: 0;
+    border-radius: 3px;
     padding: 1px;
 }
 
@@ -175,4 +176,9 @@ configuration {
 #prompt {
     spacing: 0;
     text-color: @normal-foreground;
+}
+
+element-icon {
+	size: 3ch;
+	margin: 0 20px 0 0;
 }
