@@ -4,8 +4,8 @@ configuration {
 	icon-theme: "Numix-Square";
 	modi: "run,drun,ssh";
 	lines: 15;
-	font: "Latin Modern Sans 25";
-	case-sensitive: true;
+	font: "Fira Sans 25";
+	case-sensitive: false;
 }
 * {
     active-background: #299DC4;

@@ -6,7 +6,7 @@
 @define-color black		#222d31;
 @define-color red		#ab4642;
 /*@define-color green		#33c03e;*/
-@define-color green		#ff0000;
+@define-color green		#00ff00;
 @define-color yellow		#fce205;
 /*@define-color blue		#3c7ff2;*/
 @define-color blue		#299dc4;
@@ -14,7 +14,7 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: Input, "Fira Code";
+  font-family: "Fira Code Medium";
   font-size: 20px;
   min-height: 0;
 }
@@ -55,6 +55,7 @@ window#waybar {
 
 #battery.warning,
 #memory.warning,
+#temperature.warning,
 #cpu.warning {
   border-bottom: 4px solid @yellow;
   /*border-radius: 5px;*/
@@ -62,6 +63,7 @@ window#waybar {
 
 #battery.critical,
 #memory.critical,
+#temperature.critical,
 #cpu.critical {
   border-bottom: 4px solid @red;
   /*border-radius: 5px;*/

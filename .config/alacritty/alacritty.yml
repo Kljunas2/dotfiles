@@ -1,9 +1,14 @@
+background_opacity: 0.95
+
+mouse:
+        hide_when_typing: true
+
 font:
         size: 17
         offset:
                 x: -1
         normal:
-                family: Fira Code Retina
+                family: Fira Code Medium
 
 schemes:
         default: &bright
@@ -18,7 +23,7 @@ schemes:
                         red: '#ab4642'
                         green: '#33c03e'
                         yellow: '#fce205'
-                        blue: '#3c7ff2'
+                        blue: '#5c8ff2'
                         magenta: '#ba8baf'
                         cyan: '#1abb9b'
                         white: '#d8d8d8'
