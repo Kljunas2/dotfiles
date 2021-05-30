@@ -89,6 +89,8 @@ augroup python
 	" Highlight ansi colour escape codes \033[CODEm
 	au BufRead,BufNewFile python :call matchadd('Special', '\v(<=".*?){(\d|\w)*}')
 augroup END
+
+au BufRead *.gabc :source $XDG_CONFIG_HOME/nvim/gabc.vim
 " }}}
 
 " general mappings {{{
@@ -256,4 +258,4 @@ let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
 let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
 let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
 " }}}
-source $XDG_CONFIG_HOME/nvim/gabc.vim
+"source $XDG_CONFIG_HOME/nvim/gabc.vim

@@ -15,3 +15,7 @@ alias fgrep='fgrep --colour=auto'
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 
 alias ocaml='rlwrap ocaml'
+
+alias sxiv='sxiv -t'
+
+alias webcam="mpv av://v4l2:/dev/video0"

@@ -22,8 +22,8 @@ focus output DP-1
 
 output * bg ~/.config/wall.jpeg fill
 
-#swaybg_command oguri-swaybg
-#exec --no-startup-id oguri
+swaybg_command oguri-swaybg
+exec --no-startup-id oguri
 
 exec --no-startup-id waybar
 
@@ -217,12 +217,12 @@ bindsym $mod+0 exec /home/miha/.local/bin/exitmenu
 exec --no-startup-id "unclutter -idle 5 -b"
 exec "sleep 1; gammastep-indicator"
 exec --no-startup-id xrdb -load /home/miha/.config/Xresources
-exec --no-startup-id "ibus-daemon -xrd"
+exec --no-startup-id "XDG_CURRENT_DESKTOP=KDE ibus-daemon -xrd -n sway"
 exec --no-startup-id nm-applet
 exec --no-startup-id mailspring
 exec --no-startup-id discord
 exec --no-startup-id "sleep 3; caprine"
-exec --no-startup-id steam
+#exec --no-startup-id steam
 exec --no-startup-id kanshi
 exec --no-startup-id fnott
 
@@ -237,9 +237,13 @@ exec --no-startup-id swayidle \
 for_window [app_id="zoom"] inhibit_idle
 for_window [class="vlc"] inhibit_idle fullscreen
 
+# ibus emoji
+for_window [app_id="ibus-ui-emojier" ] floating enable
+bindsym $mod+shift+e exec ibus emoji
+
 # notetaker
 for_window [title="notetaker_window" ] floating enable
-bindsym $mod+x exec alacritty -e notetaker -t notetaker_window
+bindsym $mod+x exec alacritty -t notetaker_window -e notetaker
 bindsym $mod+Shift+x exec mostRecentNote
 
 # display brightness
